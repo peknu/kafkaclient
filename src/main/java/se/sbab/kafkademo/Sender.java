@@ -18,7 +18,7 @@ public class Sender {
     @Autowired
     private KafkaTemplate<String, TntMessage> kafkaTemplate;
 
-    public void send(TntMessage payload) {
+    void send(TntMessage payload) {
         LOGGER.info("sending message='{}' to topic='{}'", payload, avroTopic);
         kafkaTemplate.send(avroTopic, "Key", payload);
     }

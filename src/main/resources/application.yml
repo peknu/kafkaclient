@@ -1,8 +1,10 @@
 spring:
   kafka:
+    client-id: tnt
     bootstrap-servers: d-kafka01.sbab.se:9092
     producer:
-      client-id: tnt
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: se.sbab.kafkademo.AvroSerializer
 
 kafka:
   avro:
