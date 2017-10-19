@@ -1,0 +1,5 @@
+spring:
+  kafka:
+    bootstrap-servers: d-kafka01.sbab.se:9092
+    producer:
+      client-id: kalle
