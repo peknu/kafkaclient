@@ -1,10 +1,15 @@
 spring:
   kafka:
     client-id: tnt
-    bootstrap-servers: d-kafka01.sbab.se:9092
+    bootstrap-servers: "d-kafka01.sbab.se:9092"
+    consumer:
+      auto-offset-reset: earliest
+      group-id: group1
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: se.sbab.kafkademo.AvroSerializer
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
 
 kafka:
   avro:

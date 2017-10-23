@@ -6,20 +6,24 @@ import se.sbab.kafka.event.TntMessage;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import java.io.IOException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Component
 @Path("/send")
 public class Endpoint {
+    private static final AtomicInteger numRequests = new AtomicInteger();
     @Autowired
     private Sender sender;
 
     @GET
-    public String message() {
+    public String message() throws IOException {
+        int req = numRequests.incrementAndGet();
         TntMessage message = TntMessage.newBuilder()
                 .setTimestamp(System.currentTimeMillis())
-                .setMessage("Hello from TnT")
+                .setMessage("Hello from TnT #" + req)
                 .build();
         sender.send(message);
-        return "Hello!!!";
+        return "Sending request #" + req;
     }
 }
