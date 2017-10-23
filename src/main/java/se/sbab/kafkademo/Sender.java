@@ -7,9 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
-import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
-import se.sbab.kafka.event.TntMessage;
+import se.sbab.kafka.event.TntInfoEvent;
 import se.sbab.kafka.utils.EventUtils;
 
 import java.io.IOException;
@@ -28,7 +27,7 @@ public class Sender {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    void send(TntMessage payload) throws IOException {
+    void send(TntInfoEvent payload) throws IOException {
         kafkaTemplate.send(avroTopic, "Key", EventUtils.convertToByteArray(payload.getSchema(), payload)).addCallback(
                 new ListenableFutureCallback<SendResult<String, byte[]>>() {
                     @Override

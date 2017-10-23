@@ -2,7 +2,7 @@ package se.sbab.kafkademo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import se.sbab.kafka.event.TntMessage;
+import se.sbab.kafka.event.TntInfoEvent;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -19,7 +19,7 @@ public class Endpoint {
     @GET
     public String message() throws IOException {
         int req = numRequests.incrementAndGet();
-        TntMessage message = TntMessage.newBuilder()
+        TntInfoEvent message = TntInfoEvent.newBuilder()
                 .setTimestamp(System.currentTimeMillis())
                 .setMessage("Hello from TnT #" + req)
                 .build();
