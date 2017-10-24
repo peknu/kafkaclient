@@ -2,6 +2,7 @@ spring:
   kafka:
     client-id: tnt
     bootstrap-servers: "d-kafka01.sbab.se:9092"
+    #bootstrap-servers: "t-kafka01.sbab.se:9092,t-kafka02.sbab.se:9092,t-kafka03.sbab.se:9092"
     consumer:
       auto-offset-reset: earliest
       group-id: group1
