@@ -1,4 +1,4 @@
-package se.sbab.kafkademo;
+package se.sbab.kafka.spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.net.UnknownHostException;
 
 @SpringBootApplication
-public class KafkademoApplication {
+public class SpringbootKafkaClientApplication {
 
 	public static void main(String[] args) throws UnknownHostException {
-		SpringApplication.run(KafkademoApplication.class, args);
+		SpringApplication.run(SpringbootKafkaClientApplication.class, args);
 	}
 }

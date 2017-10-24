@@ -1,4 +1,4 @@
-package se.sbab.kafkademo;
+package se.sbab.kafka.spring;
 
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.stereotype.Component;

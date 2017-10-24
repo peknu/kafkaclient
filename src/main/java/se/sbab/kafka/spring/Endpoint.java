@@ -1,4 +1,4 @@
-package se.sbab.kafkademo;
+package se.sbab.kafka.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

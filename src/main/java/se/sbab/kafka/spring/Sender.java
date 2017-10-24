@@ -1,4 +1,4 @@
-package se.sbab.kafkademo;
+package se.sbab.kafka.spring;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
